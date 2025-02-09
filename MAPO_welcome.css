@@ -1,0 +1,398 @@
+/*-----------------------------------------------------------------------------------*/
+/*----GENERAL------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/* Establece reglas generales para todos los elementos */
+*{
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+    box-sizing: border-box; /* Asegura que el tamaño de los elementos incluye los bordes y el padding */
+    font-family: 'Montserrat', sans-serif; /* Define la fuente para todos los elementos */
+    font-weight: 400; /* Define el grosor de la fuente */
+}
+html{
+    height: 100%;
+    font-size: 16px; /* 1rem = 16px */
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Estilo para el body */
+body{    
+    margin: 0; /* Elimina los márgenes predeterminados */
+    width: 100%; /* Establece el ancho al 100% de la ventana*/
+    height: 100%; /* Establece la altura al 100% de la ventana */
+    overflow: hidden; /* Evita que aparezca una barra de desplazamiento */
+
+    /* Establece un fondo con un gradiente radial */
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    /* Asegura que el body ocupe todo el espacio disponible */
+    position: relative;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Estilo para el elemento con id "globe" */
+#globe{
+    position: absolute; /* Posiciona el elemento de forma absoluta */
+    top: 55%; /* Lo coloca en el centro vertical de la pantalla */
+    left: 50%; /* Lo coloca en el centro horizontal de la pantalla */
+    transform: translate(-50%, -50%); /* Ajusta para centrarlo perfectamente */
+    z-index: 900; /* Lo coloca por encima de otros elementos */
+    pointer-events: none; /* Evita que el "globe" bloquee la interacción con otros elementos */
+    display: block;
+}
+/* Ordenador*/
+@media (min-width: 1024px) {
+    #globe {
+        width: 100%; /* Establece el ancho de la ventana */
+        height: 100%; /* Establece la altura de la ventana */
+    }
+}
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    #globe {
+        width: 100%; /* Establece el ancho de la ventana */
+        height: 100%; /* Establece la altura de la ventana */
+    }
+}
+/*Movil*/
+@media (max-width: 768px) {
+    #globe {
+        width: 100%; /* Establece el ancho de la ventana */
+        height: 100%; /* Establece la altura de la ventana */
+    }
+}
+
+
+
+/*----Fondo Estrellas----------------------------------------------------------------*/
+/* Estilo para el fondo de estrellas */
+.backg {
+    position: absolute; /* Posición absoluta dentro del body */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    pointer-events: none; /* No bloquea interacciones con otros elementos */
+}
+
+/* Estilo para los "span" dentro de .backg (estrellas) */
+.backg span {
+    width: .1vw; /* Tamaño muy pequeño para crear un efecto de estrella */
+    height: .1vw; /* Igual al ancho */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 100%; /* Se coloca debajo del contenedor */
+    left: 0%; /* Se coloca en el extremo izquierdo */
+    border-radius: 50%; /* Da forma circular */
+    background-color: white; /* Estrella blanca */
+    opacity: 1; /* Estrellas completamente visibles */
+    pointer-events: none; /* No bloquean interacciones */
+    transition: opacity 1s ease-in-out; /* Efecto de opacidad suave */
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*----HEADER-------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/* ---Estilo para el header ---------------------------------------------------------*/
+/*Ordenador*/
+.header {
+    width: 100%; 
+    height: 10%; 
+    top: 0; /* Lo fija arriba */   
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-between; /* Espaciado entre elementos */
+    position: fixed; /* Fija el header en la parte superior */
+    z-index: 1000; /* Lo coloca sobre otros elementos */
+    padding: 1rem; /* Espaciado por defecto */
+}
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header {
+        padding: 1.2rem; /* Espaciado interno */
+    }
+}
+/*Movil*/
+@media (max-width: 768px) {
+    .header {
+        padding: 0.8rem; /* Espaciado interno */
+    }
+}
+a {
+    cursor: pointer;
+}
+/* ---Estilo para el logo -----------------------------------------------------------*/
+/* Ordenadores */
+@media (min-width: 1024px) {
+    .logo_ord {
+        position: absolute;
+        height: auto; 
+        max-height: 110%;
+        bottom: 0;
+        width: auto;  
+        object-fit: contain; 
+        left: 2rem;  
+    }
+    .logo_tab {
+        display: none;
+    }
+}
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .logo_tab {
+        position: absolute;
+        height: auto; 
+        max-height: 70%;
+        top: 1rem;
+        width: auto;  
+        object-fit: contain; 
+        left: 1.5rem;
+    }
+    .logo_ord {
+        display: none;
+    }
+}
+/*Movil*/
+@media (max-width: 768px) {
+    .logo_tab {
+        display: none;
+    }
+    .logo_ord {
+        display: none;
+    }
+}
+/* ---Estilo para la navegación -----------------------------------------------------*/
+.navegacion-productos{
+    position: absolute;
+    bottom: 1.5rem;
+    right: 50%; /* Alineado al 50% desde la derecha */
+    transform: translateX(-3rem); /* Desplazamiento hacia la izquierda */
+}
+.navegacion-contacto{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%; /* Alineado al 50% desde la izquierda */
+    transform: translateX(3rem); /* Desplazamiento hacia la derecha */
+}
+.enlace-texto{    
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.3rem; /* Tamaño de fuente */
+    font-weight: 400; /* Grosor de la fuente */
+    cursor: pointer;
+}
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navegacion-productos {
+        bottom: 2rem; /* Espaciado interno */
+        right: 50%; /* Alineado al 50% desde la derecha */
+        transform: translateX(-4.6rem); /* Desplazamiento hacia la izquierda */
+    }
+    .navegacion-contacto {
+        bottom: 2rem; /* Espaciado interno */
+        left: 50%; /* Alineado al 50% desde la izquierda */
+        transform: translateX(4.6rem); /* Desplazamiento hacia la derecha */
+    }
+    .enlace-texto{    
+        color: white; /* Texto blanco */
+        text-decoration: none; /* Sin subrayado */
+        font-size: 1.5rem; /* Tamaño de fuente */
+        font-weight: 400; /* Grosor de la fuente */
+        cursor: pointer;
+    }
+}
+
+.enlace-texto:hover{
+    color: grey; /* Cambia el color a gris */
+}
+/* ---Estilo para el icono navegacion ------------------------------------------------------*/
+.enlace-visor_c, .enlace-visor_nc {
+    position: absolute;
+    bottom: 0px; /* Pegado al fondo del header */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centrarlo */
+    background-color: none; /* Sin fondo */
+    border-radius: 50%; /* Forma circular */
+    cursor: pointer;
+}
+/* Ordenador*/
+@media (min-width: 1024px) {
+    .enlace-visor_nc {
+        width: auto;
+        height: 80%; /* Tamaño fijo */
+        display: block; /* Hace que el icono ocupe todo el espacio disponible */
+    }
+    .enlace-visor_c {
+        display: none;
+    }
+}
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .enlace-visor_nc {
+        width: auto;
+        height: 80%; /* Tamaño fijo */
+        display: block; /* Hace que el icono ocupe todo el espacio disponible */
+    }
+    .enlace-visor_c {
+        display: none;
+    }
+}
+/*Movil*/
+@media (max-width: 768px) {
+    .enlace-visor_c {
+        width: auto;
+        height: 80%; /* Tamaño fijo */
+        display: block; /* Hace que el icono ocupe todo el espacio disponible */
+    }
+    .enlace-visor_nc {
+        display: none;
+    }
+}
+/* Estilo al pasar el ratón sobre el icono */
+.enlace-visor_nc:hover{
+    opacity: 0.5; /* Reduce la opacidad */
+}
+.enlace-visor_c:hover{
+    opacity: 0.5; /* Reduce la opacidad */
+}
+/* ---Estilo para lineas ------------------------------------------------------------*/
+.linea-izquierda {
+    position: absolute;
+    height: 3px; /* Ajusta el grosor máximo aquí */
+    background: linear-gradient(to right, white, transparent); /* Gradiente que hace que se desvanezcan */
+}
+.linea-derecha {
+    position: absolute;
+    height: 3px; /* Ajusta el grosor de la línea */
+    background: linear-gradient(to left, white, transparent); /* Gradiente que hace que se desvanezcan */
+}
+/* Ordenador*/
+@media (min-width: 1024px) {
+    .linea-izquierda {
+        bottom: 1rem; /* Desplazado 25px desde el fondo */
+        left: 50%; /* Grosor de las líneas */
+        transform: translateX(50px);
+        width: 150px; /* Longitud de la línea */
+    }
+    .linea-derecha {
+        bottom: 1rem; /* Desplazado 25px desde el fondo */
+        right: 50%; /* Grosor de las líneas */
+        transform: translateX(-50px);
+        width: 150px; /* Longitud de la línea */
+    }
+}
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .linea-izquierda {
+        bottom: 1.5rem; /* Desplazado 25px desde el fondo */
+        left: 53%; /* Grosor de las líneas */
+        transform: translateX(50px);
+        width: 140px; /* Longitud de la línea */
+    }
+    .linea-derecha {
+        bottom: 1.5rem; /* Desplazado 25px desde el fondo */
+        right: 53%; /* Grosor de las líneas */
+        transform: translateX(-50px);
+        width: 140px; /* Longitud de la línea */
+    }
+}
+/*Movil*/
+@media (max-width: 768px) {
+    .linea-izquierda {
+        bottom: 1.2rem; /* Desplazado 25px desde el fondo */
+        left: 50%; /* Grosor de las líneas */
+        transform: translateX(50px);
+        width: 125px; /* Longitud de la línea */
+    }
+    .linea-derecha {
+        bottom: 1.2rem; /* Desplazado 25px desde el fondo */
+        right: 50%; /* Grosor de las líneas */
+        transform: translateX(-50px);
+        width: 125px; /* Longitud de la línea */
+    }
+}
+/*-----------------------------------------------------------------------------------*/
+/* ---MAIN --------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/* Estilos para el contenido principal */
+.main {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 90%; /* Ocupa toda la altura */
+    bottom: 0;
+    display: flex; /* Flexbox para alinear los elementos */
+    position: absolute;
+}
+
+/* Estilo para cada sección dentro del body */
+.seccion {
+    width: 0%;
+    height: 100%; /* Cada sección ocupa toda la altura de la ventana */
+    overflow: hidden;
+    display: flex; /* Flexbox para centrar los contenidos */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    transition: width 2s ease-in-out;
+}
+/* Ordenador*/
+@media (min-width: 1024px) {
+    .seccion.activa {
+        width: 70%;
+        display: flex;
+    }
+}
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .seccion.activa {
+        width: 100%;
+        display: flex;
+    }
+}
+/*Movil*/
+@media (max-width: 768px) {
+    .seccion.activa {
+        width: 100%;
+        display: flex;
+    }
+}
+.izquierda { 
+    order: 1; 
+    /*border: 2px solid blue;*/
+} 
+.welcome {
+    order: 2;
+    flex-grow: 1;
+    /*border: 2px solid black;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.derecha { 
+    order: 3; 
+    /*border: 2px solid green;*/
+} 
+
+/* Estilo para los recuadros dentro de las secciones */
+.recuadro {
+    width: 90%;  /* 90% del ancho de la sección */
+    height: 95%; /* 85% de la altura de la sección */
+    z-index: 1000; /* Por encima de otros elementos */
+    background: rgba(255, 255, 255, 0.1);  /* Fondo semi-transparente */
+    border-radius: 20px;  /* Bordes redondeados */
+    padding: 30px 50px; /* Espaciado interno */
+    backdrop-filter: blur(20px); /* Fondo borroso */
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);  /* Sombra interna */
+    border: 2px solid rgba(255, 255, 255, 0.3);  /* Borde sutil */
+}
+
+/* Estilo para el contenido del recuadro */
+.recuadro h2 {
+    font-size: 1.5em;
+    color: white; /* Asegura que el encabezado también sea blanco */
+}
+.recuadro p {
+    color: white; /* Asegura que el párrafo también sea blanco */
+}
+.recuadro img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    max-width: 30px; /* Limita el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block;
+    margin-top: 10px;
+}
