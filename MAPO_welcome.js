@@ -1,5 +1,5 @@
 // Mensaje de prueba en la consola
-console.log('Desplazamiento');
+console.log('Página Prueba MAPO');
 
 // Funcion estrellas fondo
 let sp = document.querySelectorAll(".backg span");
