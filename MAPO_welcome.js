@@ -52,8 +52,8 @@ function main() {
     // Crear geometría y material de la esfera (Tierra)
     const earthGeometry = new THREE.SphereGeometry(0.5, 32, 32);
     const earthMaterial = new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load('../img/2_no_clouds_16k.jpg'),
-        bumpMap: new THREE.TextureLoader().load('../img/3_no_ice_clouds_16k.jpg'),
+        map: new THREE.TextureLoader().load('../img/earth-11048_1280.png'),
+        bumpMap: new THREE.TextureLoader().load('../img/earth-11048_1280.png'),
         bumpScale: 0.01,
     });
     const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
