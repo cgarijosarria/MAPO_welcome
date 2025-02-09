@@ -12,6 +12,7 @@
 html{
     height: 100%;
     font-size: 16px; /* 1rem = 16px */
+    overflow: hidden;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -23,7 +24,7 @@ body{
     overflow: hidden; /* Evita que aparezca una barra de desplazamiento */
 
     /* Establece un fondo con un gradiente radial */
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background: radial-gradient(ellipse at bottom, #000000 0%, #000000 100%);
     /* Asegura que el body ocupe todo el espacio disponible */
     position: relative;
 }
@@ -333,7 +334,7 @@ a {
 /* Ordenador*/
 @media (min-width: 1024px) {
     .seccion.activa {
-        width: 70%;
+        width: 100%;
         display: flex;
     }
 }
